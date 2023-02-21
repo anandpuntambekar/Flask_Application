@@ -1,5 +1,9 @@
 name: RUN Python Tests
 on:
-  push:
-    - main
-    
+ push:
+  - main
+jobs:
+ build:
+  runs-on: ubuntu-latest
+   steps:
+    - uses: 
