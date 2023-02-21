@@ -1,3 +1,4 @@
+import pytest
 import json
 from app import app
 import json
@@ -14,19 +15,19 @@ def test_ping(client):
     # ping end point acepts get request and sends message for you.
     resp =client.get('/ping')
     assert resp.status_code==200
-    assert resp.json= {"message":"Hi there I am working"}
+    assert resp.json== {"message":"Hi there I am working"}
 
 
 
 '''
 
 def test_ping():
-    '''
-    We first need to run a server and get get the output
-    falsk offers a test
-    When we run flask app in terminal we dont have to run fasl every time we reun flask server
-    In the test a
-    '''
+    
+    ##We first need to run a server and get get the output
+    ##falsk offers a test
+    ##When we run flask app in terminal we dont have to run fasl every time we reun flask server
+    ##In the test a
+    
     client = app.test_client()
     url = '/ping'
     response = client.get(url)
