@@ -21,54 +21,10 @@ def test_predict(client):
     test_data = {"Gender":"Male", "Married":"Unmarried",
     'Credit_History' : "Unclear Debts",
     'ApplicantIncome':100000,'LoanAmount':2000000}
-    response =client.post("/predict",data = test_data)
+    response =client.post("/predict",json = test_data)
     assert response.status_code==200
-    assert response.json={
+    assert response.json=={
         'loan_approval_status': 'Rejected'
-    }
+            }
 
 
-
-'''
-
-def test_ping():
-    
-    ##We first need to run a server and get get the output
-    ##falsk offers a test
-    ##When we run flask app in terminal we dont have to run fasl every time we reun flask server
-    ##In the test a
-    
-    client = app.test_client()
-    url = '/ping'
-    response = client.get(url)
-    assert response.status_code == 200
-    assert json.loads(response.data) == {'message': 'Hi there I am working'}
-
-def test_prediction_approved():
-    client = app.test_client()
-    url = '/predict'
-    data = {
-        'Gender': 'Male',
-        'Married': 'Yes',
-        'Credit_History': 'Unclear Debts',
-        'ApplicantIncome': 5000,
-        'LoanAmount': 200
-    }
-    response = client.post(url, json=data)
-    assert response.status_code == 200
-    assert json.loads(response.data) == {'loan_approval_status': 'Rejected'}
-
-def test_prediction_rejected():
-    client = app.test_client()
-    url = '/predict'
-    data = {
-        'Gender': 'Female',
-        'Married': 'No',
-        'Credit_History': 'Unclear Debts',
-        'ApplicantIncome': 1000,
-        'LoanAmount': 50
-    }
-    response = client.post(url, json=data)
-    assert response.status_code == 200
-    assert json.loads(response.data) == {'loan_approval_status': 'Rejected'}
-'''
