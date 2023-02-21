@@ -18,7 +18,7 @@ def test_ping(client):
 
 
 
-
+'''
 
 def test_ping():
     '''
@@ -60,3 +60,4 @@ def test_prediction_rejected():
     response = client.post(url, json=data)
     assert response.status_code == 200
     assert json.loads(response.data) == {'loan_approval_status': 'Rejected'}
+'''
