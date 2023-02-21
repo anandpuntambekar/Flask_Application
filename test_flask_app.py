@@ -17,6 +17,16 @@ def test_ping(client):
     assert resp.status_code==200
     assert resp.json== {"message":"Hi there I am working"}
 
+def test_predict(client):
+    test_data = {"Gender":"Male", "Married":"Unmarried",
+    'Credit_History' : "Unclear Debts",
+    'ApplicantIncome':100000,'LoanAmount':2000000}
+    response =client.post("/predict",data = test_data)
+    assert response.status_code==200
+    assert response.json={
+        'loan_approval_status': 'Rejected'
+    }
+
 
 
 '''
