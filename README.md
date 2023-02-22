@@ -1,6 +1,7 @@
 # Loan Application Approval Prediction Flask API
 
 Blog - https://medium.com/@anpuntam/deploying-a-loan-approval-machine-learning-system-api-using-flask-820679e6d2dc
+https://medium.com/@anpuntam/streamlining-development-and-deployment-with-continuous-integration-and-continuous-delivery-be7883391b21
 
 This is a Flask API that takes loan application information as input and returns the loan approval status using a machine learning model. The API is built using Python and uses the Flask web framework.
 
