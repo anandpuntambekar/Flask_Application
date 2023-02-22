@@ -2,7 +2,7 @@ name: Run Python Tests
 
 on:
   push:
-    - main
+    branches: [ main ]
   
 jobs:
   build:
